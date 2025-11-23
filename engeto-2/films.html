@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://s2.googleusercontent.com/s2/favicons?domain=Netflix.cz"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Films</title>
+  </head>
+
+  <body class="page-films">
+    <div id="header"></div>
+    <div class="select-wrapper">
+      <select id="select-film">
+        <option value="default" selected disabled>Vyberte možnost</option>
+        <option value="girl">Girl</option>
+        <option value="boy">Boy</option>
+        <option value="avengers">Avengers</option>
+        <option value="horor">Horor</option>
+      </select>
+    </div>
+    <section class="film"></section>
+
+    <div id="vysledky" class="gallery"></div>
+
+    <div>
+      <i class="fa-regular fa-circle-up" style="display: none"></i>
+    </div>
+<div id="footer"></div>
+    <script src="layout.js"></script>
+    <script src="filmsearch.js"></script>
+    <script src="scrollbtn.js"></script>
+  </body>
+</html>

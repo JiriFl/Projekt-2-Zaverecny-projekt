@@ -1,0 +1,12 @@
+@media (width <=650px) {
+
+.box {
+        max-width: 520px;
+    }
+
+h1 {
+    font-size: 2rem;
+
+}
+}
+
