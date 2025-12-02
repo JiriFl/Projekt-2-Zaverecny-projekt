@@ -13,6 +13,8 @@
   --secondary-text-color: gray;
   --switcher-color: rgb(76, 76, 76);
   --outline-color: #474343;
+  --error-color: rgb(214, 28, 28);
+  --succes-color: #20e637;
 }
 
 body {
@@ -23,7 +25,7 @@ body {
     url("img/background.jpg");
 }
 
-/* Hlavička*/
+/* Hlavička */
 header {
   background-color: var(--secondary-color);
   display: flex;
@@ -85,7 +87,7 @@ p {
 form {
   display: flex;
   justify-content: center;
-  gap: 10 px;
+  gap: 10px;
   flex-wrap: wrap;
   width: 100%;
   max-width: 420px;
@@ -116,8 +118,7 @@ button {
   font-weight: bold;
 }
 
-/* DRUHÁ SEKCE – výběr 3 filmů*/
-
+/* DRUHÁ SEKCE – výběr 3 filmů */
 .film {
   display: flex;
   flex-direction: column;
@@ -125,7 +126,7 @@ button {
   width: 100vw;
   align-items: center;
   gap: 30px;
-  padding: 100px 0 100px 0;
+  padding: 100px 0;
 }
 
 .film-section {
@@ -137,7 +138,7 @@ button {
   gap: 30px;
   background: var(--secondary-color);
   width: 100vw;
-  padding: 50px 0 50px 0;
+  padding: 50px 0;
 }
 
 .film-img {
@@ -188,7 +189,6 @@ button {
   color: var(--primary-text-color);
 }
 
-
 /* Scrollovací šipka */
 .fa-circle-up {
   position: fixed;
@@ -202,8 +202,9 @@ button {
   cursor: pointer;
 }
 
-/* NAČÍTÁNÍ FILMŮ Z DATABÁZE */
-/* Galerie výsledků z API */
+
+/* NAČÍTÁNÍ FILMŮ Z DATABÁZE – galerie */
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -213,26 +214,26 @@ button {
   padding: 32px 0;
 }
 
-/* Výchozí nastavení obrázku*/
+/* Výchozí nastavení obrázku */
 .gallery img {
-  width: 100px;
+  width: 200px;
   transform: rotate(5deg);
 }
 
-/* Otočení obrázku zpět po přejetí*/
+/* Otočení obrázku zpět po přejetí */
 .gallery img:hover {
   transform: scale(1.07) rotate(0deg);
   transition: transform 0.5s;
 }
 
-/* Nastavení hlavičky */
+/* Nastavení hlavičky na stránce s filmy */
 body.page-films header {
-  top: 0px;
+  top: 0;
   position: fixed;
   z-index: 1;
 }
 
-/* Wrapper pro selectu */
+/* Wrapper pro select */
 .select-wrapper {
   display: flex;
   justify-content: center;
@@ -244,10 +245,9 @@ body.page-films header {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
   background-color: var(--secondary-color);
   color: var(--primary-text-color);
-  padding: 10px 40px 10px 12px; /* místo pro šipku vpravo */
+  padding: 10px 40px 10px 12px;
   border-radius: 4px;
   border: 1px solid #444;
   font-size: 16px;
@@ -274,17 +274,37 @@ body.page-films header {
   box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.5);
 }
 
-/* Zrušení background img */
+/* Zrušení background img na vybraných stránkách */
 body.page-registration,
 body.page-films {
   background: var(--background-color);
   background-image: none;
 }
 
+/* Karty filmů načtené z API */
+.film-card {
+  display: inline-block;
+  margin: 14px;
+  text-align: center;
+}
+
+.film-card__img {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+}
+
+.film-card__title {
+  color: var(--primary-text-color);
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+
 /* REGISTRATION PAGE*/
 
 .container {
-  width: 100%;
+  /* width: 100%; */
   max-width: 320px;
   margin: 0 auto;
   padding: 30px 10px;
@@ -318,9 +338,29 @@ input {
 
 /* Rámečky pro hesla */
 input.pass-error {
-  border: 2px solid #e62020;
+  border: 2px solid var(--error-color);
 }
 
 input.pass-success {
-  border: 2px solid #20e637;
+  border: 2px solid var(--succes-color);
+}
+
+/* Box s hláškou */
+#registerForm #message {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Stavové třídy pro hlášku */
+.message-error {
+  color: var(--error-color);
+}
+
+.message-repair{
+  color: var(--primary-text-color);
+}
+
+.message-success {
+  color: var(--succes-color);
 }
