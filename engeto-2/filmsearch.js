@@ -15,31 +15,30 @@ filmDropdown.addEventListener("change", function () {
 
       for (let i = 0; i < data.length; i++) {
         let show = data[i].show;
-        let obrazek = show.image.medium;
-
+        let obrazek = show.image ? show.image.medium : 'img/placeholder.png';
 
         // Vytvoření obalového divu
         const cardDiv = document.createElement("div");
-        cardDiv.style.display = "inline-block";
-        cardDiv.style.margin = "14px";
-        cardDiv.style.textAlign = "center";
+        cardDiv.classList.add("film-card");
 
         // Vytvoření img a nastavení atributů
         const imgEl = document.createElement("img");
         imgEl.src = obrazek;
-        imgEl.style.width = "200px";
-        imgEl.style.height = "280px";
+        imgEl.alt = show.name || "";
+        imgEl.classList.add("film-card__img");
 
         // Vytvoření názvu
         const titleDiv = document.createElement("div");
-        titleDiv.style.color = "white";
+        titleDiv.textContent = show.name || "";
+        titleDiv.classList.add("film-card__title");
 
         // Sestavení karty
         cardDiv.appendChild(imgEl);
         cardDiv.appendChild(titleDiv);
 
-        // Přidání karty do výsledků
+         // Přidání karty do výsledků
         vysledkyDiv.appendChild(cardDiv);
+
       }
     });
 });
