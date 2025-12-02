@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://s2.googleusercontent.com/s2/favicons?domain=Netflix.cz"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Page registration</title>
+  </head>
+
+  <body class="page-registration">
+    <div id="header"></div>
+
+    <div class="container">
+      <form id="registerForm">
+        <input
+          type="text"
+          placeholder="Křestní jméno"
+          name="firstName"
+          required
+        />
+        <input type="text" placeholder="Příjmení" name="lastName" required />
+        <input
+          type="email"
+          placeholder="Přihlašovací email"
+          name="email"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Vaše heslo"
+          id="pass1"
+          name="password"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Heslo znovu"
+          id="pass2"
+          name="password2"
+          required
+        />
+
+        <button type="submit">Odeslat</button>
+        <p id="message"></p>
+
+      </form>
+          
+     
+    </div>
+ 
+    <div id="footer"></div>
+    <script src="layout.js"></script>
+    <script src="scrollbtn.js" defer></script>
+    <script src="psw.js" defer></script>
+  </body>
+</html>
